@@ -15,3 +15,12 @@ exports.index = asyncHandler(async (req, res, next) => {
         item_count: numItems
     })
 })
+
+exports.category_list = asyncHandler(async (req, res, next) => {
+    const categories = await Category.find({}, "name image_url").exec();
+
+    res.render("category_list", {
+        title: "All Categories",
+        category_list: categories,
+    })
+})

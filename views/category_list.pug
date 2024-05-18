@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+  div.list-page
+    div.top-info
+      h1= title
+      button 
+        a Create Category
+    div.card-list
+      each category in category_list 
+        div.card
+          a(href=category.url)
+             img.list-image(src=category.image_url)
+             p= category.name
