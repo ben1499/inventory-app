@@ -5,10 +5,13 @@ block content
     div.top-info
       h1= title
       button 
-        a Create Category
+        a(href="/inventory/category/create") Create Category
     div.card-list
       each category in category_list 
         div.card
           a(href=category.url)
-             img.list-image(src=category.image_url)
-             p= category.name
+            if category.image_url
+              img.list-image(src=category.image_url)
+            else 
+              img.list-image(src="/placeholder.webp")
+            p= category.name

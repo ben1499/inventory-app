@@ -1,0 +1,28 @@
+extends layout
+
+block content 
+  div.category.mt-5
+    div.category-info
+      if category.image_url
+        img(src=category.image_url, alt="")
+      else 
+        img(src="/placeholder.webp")
+      div
+        h1 #{title}: #{category.name}
+        p= category.description
+    div.action-btns
+      button
+        a(href=`${category.url}/update`) Update Category
+      button
+        a(href=`${category.url}/delete`) Delete Category
+  .category-items
+    h1 Items in #{category.name}
+    if item_list && item_list.length > 0
+      .card-list
+        each item in item_list 
+          .card 
+            a(href=item.url)
+              img.list-image(src=item.image_url)
+              p= item.name
+    else 
+      p No items in category

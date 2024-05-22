@@ -3,13 +3,15 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-require('dotenv').config()
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const inventoryRouter = require("./routes/inventory")
 
 const app = express();
+
+app.use(express.static('public/images'));
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);

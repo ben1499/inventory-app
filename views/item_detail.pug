@@ -1,0 +1,18 @@
+extends layout
+
+block content 
+  div.item
+    div.item-info 
+      img(src=item.image_url, alt="")
+      div 
+        h1= item.name 
+        p= item.description 
+        p Price: ₹#{item.price}
+        p In-stock: #{item.in_stock}
+        p Category: 
+          a(href=item.category.url) #{item.category.name}
+    .action-btns 
+      button
+        a(href=`${item.url}/update`) Update Item 
+      button
+        a(href=`${item.url}/delete`) Delete Item

@@ -11,3 +11,12 @@ exports.item_list = asyncHandler(async (req, res, next) => {
         item_list: items,
     })
 })
+
+exports.item_detail = asyncHandler(async (req, res, next) => {
+    const item = await Item.findById(req.params.id).populate("category").exec();
+
+    res.render("item_detail", {
+        title: "Item",
+        item: item,
+    })
+})
