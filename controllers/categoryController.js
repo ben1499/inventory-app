@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 const multer = require('multer');
 const cloudinary = require("cloudinary").v2;
+const fs = require('fs').promises;
 
 cloudinary.config({ 
   cloud_name: 'dfubtb083', 
@@ -93,6 +94,8 @@ exports.category_create_post = [
     let image_url = null;
     if (req.file) {
       image_url = await uploadToCloudinary(`uploads/${req.file.filename}`);
+      // Delete file after uploading
+      await fs.unlink(req.file.path);
     }
     
     // Create Category object with escaped and trimmed data
@@ -155,6 +158,8 @@ exports.category_update_post = [
     let image_url = null;
     if (req.file) {
       image_url = await uploadToCloudinary(`uploads/${req.file.filename}`);
+       // Delete file after uploading
+       await fs.unlink(req.file.path);
     }
 
     let category = null;
