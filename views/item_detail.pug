@@ -3,7 +3,10 @@ extends layout
 block content 
   div.item
     div.item-info 
-      img(src=item.image_url, alt="")
+      if item.image_url
+        img(src=item.image_url, alt="")
+      else 
+        img(src="/placeholder.webp", alt="")
       div 
         h1= item.name 
         p= item.description 

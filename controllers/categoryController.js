@@ -84,9 +84,7 @@ exports.category_create_post = [
     .trim()
     .isLength({ min: 2 })
     .escape()
-    .withMessage("Name must be specified")
-    .isAlphanumeric()
-    .withMessage("Name has non-alphanumeric characters."),
+    .withMessage("Name must be specified"),
 
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
@@ -208,7 +206,7 @@ exports.category_delete_get = asyncHandler(async (req, res, next) => {
   }
 
   res.render("category_delete", {
-    title: "Delete category",
+    title: "Delete Category",
     category: category,
     category_items: allItemsByCategory,
   });
