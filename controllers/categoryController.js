@@ -145,9 +145,7 @@ exports.category_update_post = [
     .trim()
     .isLength({ min: 2 })
     .escape()
-    .withMessage("Name must be specified")
-    .isAlphanumeric()
-    .withMessage("Name has non-alphanumeric characters."),
+    .withMessage("Name must be specified"),
 
   asyncHandler(async (req, res, next) => {
     // Extract the validation errors from a request.

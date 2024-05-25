@@ -2,6 +2,16 @@ extends layout
 
 block content
   div.home-page
-    h1= title
-    p No. of Categories: #{category_count}
-    p No. of Items: #{item_count}
+    h1 Inventory Stats
+    div.d-flex.justify-content-between.count-info
+      div
+        p No. of Categories: 
+        p No. of Items: 
+      div 
+        p.fw-bold= category_count 
+        p.fw-bold= item_count
+    div.home-page-btns
+      a(href="/inventory/category/create")
+        button.cus-btn Create Category
+      a(href="/inventory/item/create")
+        button.cus-btn Create Item

@@ -9,10 +9,10 @@ block content
         img(src="/placeholder.webp")
       div
         h1 #{title}: #{item.name}
-        p= item.description
-        p Price: ₹#{item.price}
-        p In-stock: #{item.in_stock}
-        p Category: 
+        p.mb-3= item.description
+        p.fs-4 Price: ₹#{item.price}
+        p.fs-4 In-stock: #{item.in_stock}
+        p.fs-4 Category: 
           a(href=item.category.url) #{item.category.name}
 
     if !item.is_default
@@ -23,8 +23,8 @@ block content
           div.form-group
             input#itemid.form-control(type='hidden', name='itemid', value=item._id )
 
-          button.btn.btn-primary(type='submit') Delete
+          button.cus-btn(type='submit') Delete
     
     else
-      h5(style="text-align: center") Default Item cannot be deleted
+      h5.mt-3(style="text-align: center") Default Item cannot be deleted
   

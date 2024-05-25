@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+
+:root {
+  --color-dark: #1F2833;
+  --color-light: #c5c6c7;
+}
+
 body {
-  padding: 0 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sedan SC", serif;
+}
+
+form input, form textarea, form label {
+  font-family: sans-serif;
 }
 
 a {
@@ -11,9 +25,32 @@ p {
   margin: 0;
 }
 
+.cus-btn {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border: none;
+  border: 1px solid var(--color-dark);
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+/* .cus-btn > a {
+  color: unset;
+  text-decoration: none;
+} */
+
+.cus-btn:hover {
+  color: #fff;
+  background-color: #000;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 14px 30px;
 }
 
 header > h1 a {
@@ -23,38 +60,64 @@ header > h1 a {
 
 header > h1 a:hover {
   text-decoration: none;
+  color: #fff;
 }
 
 .header-nav > ul {
   display: flex;
   list-style-type: none;
   gap: 20px;
+  margin: 0;
 }
 
 .header-nav a {
   text-decoration: none;
+  color: unset;
 }
 
+.header-nav a:hover {
+  color: #fff;
+}
+
+main {
+  background-color: #c5c6c7;
+  flex: 1;
+  color: #1F2833;
+}
 
 .home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  margin-top: 200px;
 }
 
-.home-page > p {
-  font-size: 18px;
+.home-page  p {
+  font-size: 20px;
 }
 
-.list-page {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+.count-info {
+  border: 1px solid var(--color-dark);
+  width: 20%;
+  padding: 16px;
+}
+
+.home-page-btns {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+}
+
+.home-page-btns a {
+  text-decoration: none;
 }
 
 .top-info {
   text-align: center;
+}
+
+.list-page {
+  margin-top: 20px;
 }
 
 .card-list {
@@ -68,11 +131,18 @@ header > h1 a:hover {
 
 .card {
   background-color: #fff;
+  border: none;
   border-radius: 6px;
   width: 250px;
   box-shadow: 2px 2px 5px 3px rgb(0, 0, 0, 0.2);
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   text-align: center;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.card:hover {
+  transform: scale(1.01);
 }
 
 .card > a {
@@ -81,12 +151,14 @@ header > h1 a:hover {
 }
 
 .card img {
+  object-fit: cover;
   width: 100%;
   height: 200px;
 }
 
-.list-image {
-  /* width: 200px; */
+.card p {
+  padding: 12px 0;
+  color: var(--color-dark);
 }
 
 .category {
@@ -106,6 +178,10 @@ header > h1 a:hover {
 .category-items {
   margin-top: 70px;
   text-align: center;
+}
+
+.category-link {
+  color:#145670;
 }
 
 .action-btns {
@@ -133,6 +209,21 @@ header > h1 a:hover {
 }
 
 .create-form {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
+}
+
+footer {
+  background-color: var(--color-light);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+footer i {
+  font-size: 32px;
+}
+
+footer > a {
+  color: unset;
 }

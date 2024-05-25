@@ -3,22 +3,22 @@ extends layout
 block content 
   h1(style="text-align: center; margin-top: 50px; margin-bottom: 40px;")= title 
   form.create-form(method="POST" enctype="multipart/form-data") 
-    div.form-group
+    div.mb-3
       label(for='name') Name:
       input#name.form-control(type='text', placeholder='Name of category' name='name' required value=(undefined===category ? '' : category.name ) )
-    div.form-group
+    div.mb-3
       label(for='description') Description:
       textarea#description.form-control(placeholder='Description' name='description')= undefined===category ? '' : category.description
-    div.form-group
+    div.mb-3
       label(for='image_url') Image:
       input#image_url(type='file', placeholder='Upload image' name='image')
     if category 
       if category.is_default
-        h5 Cannot update default item
+        h5 Default category cannot be updated
       else
-        button.btn.btn-primary(type='submit') Submit
+        button.cus-btn(type='submit') Submit
     else
-      button.btn.btn-primary(type='submit') Submit
+      button.cus-btn(type='submit') Submit
   
   if errors
     ul

@@ -9,13 +9,17 @@ block content
         img(src="/placeholder.webp", alt="")
       div 
         h1= item.name 
-        p= item.description 
-        p Price: ₹#{item.price}
-        p In-stock: #{item.in_stock}
-        p Category: 
-          a(href=item.category.url) #{item.category.name}
+        p.mb-3= item.description 
+        p.fs-4 Price: ₹#{item.price}
+        p.fs-4 In-stock: #{item.in_stock}
+        p.fs-4 Category: 
+          a.category-link(href=item.category.url) #{item.category.name}
     .action-btns 
-      button
-        a(href=`${item.url}/update`) Update Item 
-      button
-        a(href=`${item.url}/delete`) Delete Item
+      a(href=`${item.url}/update`)
+        button.cus-btn
+          i.fa-regular.fa-pen-to-square
+          |  Update Item 
+      a(href=`${item.url}/delete`)
+        button.cus-btn
+          i.fa-solid.fa-trash
+          |  Delete Item

@@ -11,10 +11,14 @@ block content
         h1 #{title}: #{category.name}
         p= category.description
     div.action-btns
-      button
-        a(href=`${category.url}/update`) Update Category
-      button
-        a(href=`${category.url}/delete`) Delete Category
+      a(href=`${category.url}/update`)
+        button.cus-btn
+          i.fa-regular.fa-pen-to-square
+          |  Update Category
+      a(href=`${category.url}/delete`)
+        button.cus-btn
+          i.fa-solid.fa-trash
+          |  Delete Category
   .category-items
     h1 Items in #{category.name}
     if item_list && item_list.length > 0

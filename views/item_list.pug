@@ -3,9 +3,9 @@ extends layout
 block content 
   div.list-page
     .top-info
-         h1= title
-         button
-           a(href="/inventory/item/create") Create Item
+      h1= title
+      a(href="/inventory/item/create")
+        button.cus-btn.mt-2 Create Item
     div.card-list
       each item in item_list 
         div.card
